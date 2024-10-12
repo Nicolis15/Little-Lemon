@@ -1,17 +1,12 @@
 package com.example.littlelemon
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.littlelemon.composables.Onboarding
+import com.example.littlelemon.Screens.Onboarding
 import com.example.littlelemon.ui.theme.LittleLemonTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,9 +15,22 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             LittleLemonTheme {
-                Onboarding()
+                InitUI()
             }
         }
+    }
+
+    @Composable
+    fun InitUI() {
+        Onboarding(this::intentHomeScreen)
+    }
+
+    private fun intentHomeScreen(firstName : String, lastName : String, email : String ){
+        val intent = Intent(this, MenuOptions::class.java)
+        intent.putExtra("firsName", firstName)
+        intent.putExtra("lastName", lastName)
+        intent.putExtra("email", email)
+        startActivity(intent)
     }
 }
 
