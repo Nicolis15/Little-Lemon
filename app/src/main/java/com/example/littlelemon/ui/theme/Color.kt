@@ -5,7 +5,7 @@ import androidx.compose.ui.graphics.Color
 object LittleLemonColors {
     val Prymary = Color(0xFF495E57)
     val Secundary = Color(0xFFF4CE14)
-    val Gray = Color.DarkGray
+    val Gray = Color(0xFFEDEFEE)
     val detalles1 = Color(0xFFEDEFEE)
     val Black = Color.Black
     val Blanco = Color(0xFFFFFFFF)

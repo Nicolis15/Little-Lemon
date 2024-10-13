@@ -1,10 +1,7 @@
 package com.example.littlelemon.Screens
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,9 +11,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -30,7 +25,7 @@ import com.example.littlelemon.R
 import com.example.littlelemon.ui.theme.LittleLemonColors
 
 @Composable
-fun ProfileScreen(firsName: String?, lastName: String?, email: String?) {
+fun ProfileScreen(firsName: String?, lastName: String?, email: String?, logOutIntent: () -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -38,7 +33,7 @@ fun ProfileScreen(firsName: String?, lastName: String?, email: String?) {
         Image(
             modifier = Modifier
                 .padding(40.dp)
-                .width(250.dp),
+                .width(200.dp),
             painter = painterResource(id = R.drawable.logo),
             contentDescription = "LittleLemonLogo",
             contentScale = ContentScale.Crop
@@ -105,7 +100,7 @@ fun ProfileScreen(firsName: String?, lastName: String?, email: String?) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(end = 30.dp, start = 30.dp, bottom = 40.dp),
-            onClick = {  },
+            onClick = { logOutIntent() },
             colors = ButtonDefaults.buttonColors(LittleLemonColors.Secundary)
         ) {
             Text(

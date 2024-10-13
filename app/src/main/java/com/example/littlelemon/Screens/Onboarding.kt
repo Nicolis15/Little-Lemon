@@ -45,7 +45,7 @@ fun Onboarding(intentMenuOptions: KFunction3<String, String, String, Unit>) {
         Image(
             modifier = Modifier
                 .padding(40.dp)
-                .width(250.dp),
+                .width(200.dp),
             painter = painterResource(id = R.drawable.logo),
             contentDescription = "LittleLemonLogo",
             contentScale = ContentScale.Crop
@@ -54,7 +54,7 @@ fun Onboarding(intentMenuOptions: KFunction3<String, String, String, Unit>) {
             modifier = Modifier
                 .fillMaxWidth()
                 .background(color = LittleLemonColors.Prymary)
-                .padding(50.dp),
+                .padding(40.dp),
             horizontalAlignment = Alignment.CenterHorizontally
 
         ) {
@@ -66,7 +66,7 @@ fun Onboarding(intentMenuOptions: KFunction3<String, String, String, Unit>) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 50.dp, start = 30.dp, bottom = 50.dp),
+                .padding(top = 20.dp, start = 30.dp, bottom = 20.dp),
         ) {
             Text(
                 text = "Let's get to know you",
@@ -79,7 +79,7 @@ fun Onboarding(intentMenuOptions: KFunction3<String, String, String, Unit>) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .border(
-                        1.dp, LittleLemonColors.Gray,
+                        1.dp, LittleLemonColors.Black,
                         RoundedCornerShape(10.dp)
                     ),
                 value = firstName,

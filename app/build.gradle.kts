@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.10"
 }
 
 android {
@@ -52,6 +53,14 @@ android {
 dependencies {
     implementation("androidx.compose.material:material:1.6.4")
     implementation("androidx.navigation:navigation-compose:2.7.7")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0") // La última versión de kotlinx.serialization
+    implementation("io.ktor:ktor-client-core:2.3.4") // Ktor Client Core
+    implementation("io.ktor:ktor-client-cio:2.3.4") // Dependencia de Ktor para las llamadas HTTP
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.4") // Para manejar la negociación de contenido
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.4")
+
+    implementation("io.coil-kt:coil-compose:2.4.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
